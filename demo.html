@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Clippy jQuery Plugin Demo</title>
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+	<script src="jquery.clippy.js" type="text/javascript"></script>
+</head>
+<body>
+	<ul>
+		<li>Hello, world! <span class="clippy">Hello, world!</span></li>
+		<li>This is some copyable text. <span class="clippy">This is some copyable text.</span></li>
+		<li>It's handy for URLS. <span class="clippy">http://www.google.com</span>
+	</ul>
+	
+	<ul style="background-color: #000000; color: #FFFFFF;">
+		<li>Configure certain options, if you want. <span class="big_clippy">Copy differently-colored text too!</span></li>
+	</ul>
+	
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			$('.clippy').clippy();
+			
+			$('.big_clippy').clippy({'color': '#000000', 'keep_text': true});
+		});
+	</script>
+</body>
+</html>
