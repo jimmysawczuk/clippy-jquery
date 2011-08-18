@@ -27,7 +27,7 @@
 		$('.clippy').clippy();
 	});
 	
-**Done!** You can see **clippy-jquery** in action [in `demo.html`][5].
+**Done!** You can see **clippy-jquery** in action [here][5].
 
 ### Acknowledgements ###
 
@@ -63,6 +63,6 @@ Obviously, without [**mojombo**][3]'s excellent work on [clippy][1], this plugin
   [2]: http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js
   [3]: https://github.com/mojombo
   [4]: https://github.com/mojombo/clippy/blob/master/LICENSE
-  [5]: https://bitbucket.org/jimmysawczuk/clippy-jquery/raw/tip/demo.html
+  [5]: http://files.jimmysawczuk.com/clippy-jquery/demo.html
   [6]: http://jquery.com
   [7]: http://jquery.org/license
