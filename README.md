@@ -31,11 +31,11 @@
 
 ### Acknowledgements ###
 
-Obviously, without [**mojombo**][3]'s excellent work on [clippy][1], this plugin would not be possible.
+Obviously, without [**mojombo**][3]'s excellent work on [clippy][1], this plugin would not be possible. Additionally, without [jQuery][6], this plugin would not be possible.
 
 ### License ###
 
-Both [clippy][1] and **clippy-jquery** are protected under MIT licenses. [clippy][1]'s license information is [here][4], while **clippy-jquery**'s is below:
+[clippy][1], [jQuery][6] and **clippy-jquery** are released under MIT licenses. [clippy][1]'s license information is [here][4], jQuery's is [here][7], and **clippy-jquery**'s is below:
 
 	The MIT License (MIT)
 	Copyright (C) 2011 by Jimmy Sawczuk
@@ -64,3 +64,5 @@ Both [clippy][1] and **clippy-jquery** are protected under MIT licenses. [clippy
   [3]: https://github.com/mojombo
   [4]: https://github.com/mojombo/clippy/blob/master/LICENSE
   [5]: https://bitbucket.org/jimmysawczuk/clippy-jquery/raw/tip/demo.html
+  [6]: http://jquery.com
+  [7]: http://jquery.org/license
