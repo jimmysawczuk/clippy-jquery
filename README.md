@@ -17,7 +17,8 @@ In your `<head>`, you need to include jQuery and the plugin:
 	
 Insert the clipboard text in the HTML, using a selector to keep track of which items you're using Clippy on:
 
-	<b>URL:</b> http://www.domain.com/this/is/a/really/long/path/to/a/page.html (<span class="clippy">http://www.domain.com/this/is/a/really/long/path/to/a/page.html</span>)
+	<b>URL:</b> http://www.domain.com/this/is/a/really/long/path/to/a/page.html 
+		(<span class="clippy">http://www.domain.com/this/is/a/really/long/path/to/a/page.html</span>)
 
 In `$(document).ready()`, invoke the plugin: 
 
