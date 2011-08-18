@@ -4,7 +4,7 @@
 
 ### Requirements ###
 
- * jQuery (tested on [1.6.2, Google CDN version][2])
+ * jQuery (tested on [1.6.2][2])
  * Flash (just the web browser plugin, no Flash *development* required).
 
 ### Getting started ###
