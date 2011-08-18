@@ -27,7 +27,7 @@
 		$('.clippy').clippy();
 	});
 	
-**Done!**
+**Done!** You can see **clippy-jquery** in action [in `demo.html`][5].
 
 ### Acknowledgements ###
 
@@ -63,3 +63,4 @@ Both [clippy][1] and **clippy-jquery** are protected under MIT licenses. [clippy
   [2]: http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js
   [3]: https://github.com/mojombo
   [4]: https://github.com/mojombo/clippy/blob/master/LICENSE
+  [5]: https://bitbucket.org/jimmysawczuk/clippy-jquery/raw/tip/demo.html
