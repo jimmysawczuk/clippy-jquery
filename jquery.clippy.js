@@ -31,8 +31,21 @@ We're using Clippy, found at https://github.com/mojombo/clippy, to make a simple
 		// for every element matched...
 		this.each(function(idx, val)
 		{
+			if (opts.text && opts.text != '')
+			{
+				text = opts.text;
+			}
+			else if ($(val).data('text') && $(val).data('text') != '')
+			{
+				text = $(val).data('text');
+			}
+			else
+			{
+				text = $(val).html();
+			}
+			
 			// text should be URI-encoded, per https://github.com/mojombo/clippy/pull/9
-			text = encodeURIComponent($(val).html());
+			text = encodeURIComponent(text);
 			
 			// text is set per element, unlike everything else which is set per selector
 			params.FlashVars = 'text=' + text;

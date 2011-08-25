@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Clippy jQuery Plugin Demo</title>
+	
+	<script src="jquery.min.js" type="text/javascript"></script>
+	<script src="jquery.clippy.min.js" type="text/javascript"></script>
+	<link href="style.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+	<div id="container">
+		<div id="lhs">
+			<div class="padded_container">
+				<h1>Hello, world! <span class="clippy">Greetings!</span></h1>
+				
+				<ul>
+					
+					<li>This is copyable too... <span class="clippy" data-text="...but I put it in a HTML5 data attribute!"></span></li>
+					<li>It's handy for URLS, like: <span class="clippy">http://www.google.com</span></li>
+					
+					<li><input id="change_me" type="text" value="Change this field to rewrite a clippy on the fly!"> <span id="change_me_clippy"></span></li>
+				</ul>
+				
+				Click "View Source" to see what makes it work!
+			</div>
+		</div>
+		
+		<div id="rhs">
+			<div class="padded_container">
+				<textarea id="pastebin" class="empty">Paste your text here!</textarea>
+			</div>
+		</div>
+	</div>
+		
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			/* Get all of this boring stuff out of the way... */
+			$('#pastebin').click(function(evt)
+			{
+				$('#pastebin').removeClass('empty');
+				$('#pastebin')[0].select();
+				return false;
+			});
+			
+			/* Set up the clippies! */
+			$('.clippy').clippy();
+			
+			$('#change_me').keyup(function()
+			{
+				$('#change_me_clippy').clippy({'text': $(this).val() });
+			}).keyup();	
+		});
+	</script>
+</body>
+</html>
