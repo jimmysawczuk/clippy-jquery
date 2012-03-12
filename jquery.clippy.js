@@ -41,7 +41,7 @@ We're using Clippy, found at https://github.com/mojombo/clippy, to make a simple
 			}
 			else
 			{
-				text = $(val).html();
+				text = $(val).text();
 			}
 			
 			// text should be URI-encoded, per https://github.com/mojombo/clippy/pull/9
