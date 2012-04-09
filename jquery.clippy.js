@@ -58,18 +58,27 @@ We're using Clippy, found at https://github.com/mojombo/clippy, to make a simple
 				'width': opts.width, 
 				'height': opts.height
 			});
-			
-			// create, append <param>s to <object>
-			$.each(params, function(idx2, val2)
-			{
-				dom.append($('<param />').attr({ 'name': idx2, 'value': val2 }));
-			});
-			
-			// create, append <embed> to <object>
+
+			// create <embed /> to append to <object />
 			embed = $('<embed />').attr(embed_params);
 			
-			// append object to dom
-			dom.append(embed);
+			try {
+
+				// try to append <embed /> to <object />
+				dom.append(embed);
+
+				// create and prepend <param>s to <object>
+				$.each(params, function(idx2, val2)
+				{
+					dom.prepend($('<param />').attr({ 'name': idx2, 'value': val2 }));
+				});
+
+			} catch(e) {
+
+				// appending <embed /> is not allowed on IE, so just ignore the <object /> and use the <embed /> instead.
+				dom = embed;
+
+			}			
 			
 			// if we keep the text, we put the button and THEN the text, otherwise, just replace text with the button
 			if (opts.keep_text)
