@@ -23,9 +23,15 @@ We're using Clippy, found at https://github.com/mojombo/clippy, to make a simple
 		};
 
 		// add transparency or background color
-		if( opts.transparent ) {
+		if (opts.transparent && typeof opts.transparent === "string")
+		{
+			params.wmode = opts.transparent;
+		}
+		else if (opts.transparent && typeof opts.transparent === "boolean")
+		{
 			params.wmode = "transparent";
-		} else {
+		}
+		else {
 			params.bgcolor = opts.color;
 		}
 		
