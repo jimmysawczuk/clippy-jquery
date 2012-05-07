@@ -9,7 +9,8 @@ We're using Clippy, found at https://github.com/mojombo/clippy, to make a simple
 			'height': '14',
 			'color': '#ffffff',
 			'clippy_path': 'clippy.swf',
-			'keep_text': false
+			'keep_text': false,
+			'transparent': false
 		};
 		
 		opts = $.extend(_opts, opts);
@@ -18,9 +19,15 @@ We're using Clippy, found at https://github.com/mojombo/clippy, to make a simple
 			'movie': opts.clippy_path,
 			'allowScriptAccess': 'always',
 			'quality': 'high',
-			'scale': 'noscale',
-			'bgcolor': opts.color
+			'scale': 'noscale'
 		};
+
+		// add transparency or background color
+		if( opts.transparent ) {
+			params.wmode = "transparent";
+		} else {
+			params.bgcolor = opts.color;
+		}
 		
 		// duplicate, then modify the params we already have for the <embed>
 		embed_params = $.extend({}, params, {'width': opts.width, 'height': opts.height});
