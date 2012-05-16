@@ -1,10 +1,6 @@
-/*
-clippy-jquery
-Jimmy Sawczuk
-<http://github.com/jimmysawczuk/clippy-jquery>
-
-(c) 2011-2012
-MIT License, see README.md for full license information and acknowledgements
+/*!
+	clippy-jquery: <http://github.com/jimmysawczuk/clippy-jquery>
+	(c) 2011-2012; MIT License, see README.md for full license information and acknowledgements
 */
 (function($)
 {
