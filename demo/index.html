@@ -44,11 +44,11 @@
 			});
 			
 			/* Set up the clippies! */
-			$('.clippy').clippy();
+			$('.clippy').clippy({clippy_path: "../bin/clippy.swf"});
 			
 			$('#change_me').keyup(function()
 			{
-				$('#change_me_clippy').clippy({'text': $(this).val() });
+				$('#change_me_clippy').clippy({'text': $(this).val(), clippy_path: "../bin/clippy.swf"});
 			}).keyup();	
 		});
 	</script>

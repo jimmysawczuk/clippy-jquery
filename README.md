@@ -31,7 +31,11 @@
 
 ### Acknowledgements ###
 
-Obviously, without [**mojombo**][3]'s excellent work on [clippy][1], this plugin would not be possible. Additionally, without [jQuery][6], this plugin would not be possible.
+Thanks to the following open source projects, without which this project would be impossible:
+
+ * [clippy][1]
+ * [jQuery][6]
+ * [swfobject][8]
 
 ### License ###
 
@@ -66,3 +70,4 @@ Obviously, without [**mojombo**][3]'s excellent work on [clippy][1], this plugin
   [5]: http://files.jimmysawczuk.com/clippy-jquery/demo/
   [6]: http://jquery.com
   [7]: http://jquery.org/license
+  [8]: http://github.com/swfobject/swfobject
