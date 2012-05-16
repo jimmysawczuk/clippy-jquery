@@ -1,5 +1,10 @@
 /*
-We're using Clippy, found at https://github.com/mojombo/clippy, to make a simple-to-use jQuery plugin for easy copying to the clipboard from the web browser. Some Flash required, YMMV.
+clippy-jquery
+Jimmy Sawczuk
+<http://github.com/jimmysawczuk/clippy-jquery>
+
+(c) 2011-2012
+MIT License, see README.md for full license information and acknowledgements
 */
 (function($)
 {
@@ -48,20 +53,11 @@ We're using Clippy, found at https://github.com/mojombo/clippy, to make a simple
 				id = $(this).attr('id');
 			}
 			
-			$(this).html('');
-			swfobject.embedSWF(opts.clippy_path, id, opts.width, opts.height, '10', false, {text: text}, {scale: "noscale"});
-			
-			/*
-			// if we keep the text, we put the button and THEN the text, otherwise, just replace text with the button
 			if (opts.keep_text)
 			{
-				$(val).html('').append(dom).append(decodeURIComponent(text));
+				$(this).html('');
 			}
-			else
-			{
-				$(val).html('').append(dom);
-			}
-			*/
+			swfobject.embedSWF(opts.clippy_path, id, opts.width, opts.height, '10', false, {text: text}, {scale: "noscale"});
 		});
 	};
 })(jQuery);
