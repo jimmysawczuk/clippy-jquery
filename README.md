@@ -11,24 +11,21 @@
 
 1. In your `<head>`, you need to include jQuery and the plugin:
 	
-     ```html
-	 <!-- use local jQuery if you prefer -->
-	 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
-	 <script src="jquery.clippy.min.js" type="text/javascript"></script>
-	
+        <!-- use local jQuery if you prefer -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+        <script src="jquery.clippy.min.js" type="text/javascript"></script>
+
 2. Insert the clipboard text in the HTML, using a selector to keep track of which items you're using Clippy on:
 
-    ```html
-	 <b>URL:</b> http://www.domain.com/this/is/a/really/long/path/to/a/page.html 
-		 (<span class="clippy">http://www.domain.com/this/is/a/really/long/path/to/a/page.html</span>)
+        <b>URL:</b> http://www.domain.com/this/is/a/really/long/path/to/a/page.html 
+          (<span class="clippy">http://www.domain.com/this/is/a/really/long/path/to/a/page.html</span>)
 
 3. In `$(document).ready()`, invoke the plugin:
 
-    ```javascript
-	$(document).ready(function()
-	{
-		$('.clippy').clippy();
-	});
+        $(document).ready(function()
+        {
+		    $('.clippy').clippy();
+	    });
 	
 4. Done! You can see **clippy-jquery** in action at the demo page [here][5].
 
