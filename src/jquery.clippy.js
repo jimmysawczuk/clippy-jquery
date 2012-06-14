@@ -64,11 +64,12 @@
 				}
 				swfobject.embedSWF(opts.clippy_path, id, opts.width, opts.height, '10', false, {text: text}, {scale: "noscale"});
 			});
+		
 		}else{
-			// hide all the clippies so unwanted text is not displayed when Flash is not supported!
+			// hide all the clippies so unwanted text is not displayed when Flash is not supported
 			this.each(function(idx, val) {
 				$(this).css('display','none');
-			}
+			});
 		}
 	};
 })(jQuery);
