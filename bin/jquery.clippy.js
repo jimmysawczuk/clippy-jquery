@@ -852,7 +852,8 @@ var swfobject = function() {
 			'color': '#ffffff',
 			'clippy_path': 'clippy.swf',
 			'keep_text': false,
-			'transparent': false
+			'transparent': false,
+			'force_load' : false
 		};
 		
 		opts = $.extend(_opts, opts);
@@ -865,7 +866,7 @@ var swfobject = function() {
 			if(navigator.mimeTypes ["application/x-shockwave-flash"] != undefined) hasFlash = true;
 		}
 		
-		if(hasFlash) { // if browser has Flash support...
+		if(hasFlash || opts.force_load) { // if browser has Flash support or manual override set...
 			// for every element matched...
 			this.each(function(idx, val)
 			{
