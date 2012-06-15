@@ -19,14 +19,25 @@
 		opts = $.extend(_opts, opts);
 		
 		var hasFlash = false;
-		try {
+		try
+		{
 			var fo = new ActiveXObject('ShockwaveFlash.ShockwaveFlash');
-			if(fo) hasFlash = true;
-		}catch(e){
-			if(navigator.mimeTypes ["application/x-shockwave-flash"] != undefined) hasFlash = true;
+			if (fo)
+			{
+				hasFlash = true;
+			}
+		}
+		catch(e)
+		{
+			if (navigator.mimeTypes ["application/x-shockwave-flash"] != undefined)
+			{
+				hasFlash = true;
+			}
 		}
 		
-		if(hasFlash || opts.force_load) { // if browser has Flash support or manual override set...
+		// if browser has Flash support or manual override set...
+		if (hasFlash || opts.force_load) 
+		{ 
 			// for every element matched...
 			this.each(function(idx, val)
 			{
@@ -65,11 +76,13 @@
 				}
 				swfobject.embedSWF(opts.clippy_path, id, opts.width, opts.height, '10', false, {text: text}, {scale: "noscale"});
 			});
-		
-		}else{
+		}
+		else
+		{
 			// hide all the clippies so unwanted text is not displayed when Flash is not supported
-			this.each(function(idx, val) {
-				$(this).css('display','none');
+			this.each(function(idx, val)
+			{
+				$(this).css({'display': 'none'});
 			});
 		}
 	};
