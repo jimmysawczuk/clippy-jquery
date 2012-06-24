@@ -13,7 +13,8 @@
 			'clippy_path': 'clippy.swf',
 			'keep_text': false,
 			'transparent': false,
-			'force_load' : false
+			'force_load' : false,
+			'flashvars'  : {}
 		};
 		
 		opts = $.extend(_opts, opts);
@@ -74,7 +75,7 @@
 				{
 					$(this).html('');
 				}
-				swfobject.embedSWF(opts.clippy_path, id, opts.width, opts.height, '10', false, {text: text}, {scale: "noscale"});
+				swfobject.embedSWF(opts.clippy_path, id, opts.width, opts.height, '10', false, $.extend(opts.flashvars, {text: text}), {scale: "noscale"});
 			});
 		}
 		else
