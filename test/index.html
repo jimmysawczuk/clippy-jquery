@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Clippy jQuery Plugin Demo</title>
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+	<script src="../src/swfobject.js" type="text/javascript"></script>
+	<script src="../src/jquery.clippy.js" type="text/javascript"></script>
+	
+	<link href="css/style.min.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+	<div id="container">
+		<h1>clippy-jquery</h1>
+
+		<div id="lhs">
+			<div class="padded_container">
+				<b>clippy-jquery</b> is a jQuery plugin that creates <a href="https://github.com/mojombo/clippy">clippy</a> objects to let your users copy arbitrary text from your web pages onto their clipboards.
+
+				<h2>Examples</h2>
+				<ul>
+					<li>My repository URL:<br />
+						<small>
+							http://github.com/jimmysawczuk/clippy-jquery 
+							<span class="clippy" data-text="http://github.com/jimmysawczuk/clippy-jquery"></span>
+						</small>
+					</li>
+					<li>Copy some placeholder text
+						<span class="clippy">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vehicula condimentum tellus, ut aliquet orci sodales ac. Donec eleifend suscipit libero, eget ultricies leo aliquam id. In hac habitasse platea dictumst. Nullam ultrices eros et tellus placerat ut condimentum elit malesuada. Integer sed aliquam massa. Mauris laoreet sollicitudin turpis. Duis urna dolor, dictum id malesuada at, aliquam gravida eros.
+						</span>
+					</li>
+					<li>
+						<input id="change_me" type="text" placeholder="Generate a dynamic clippy" value="" />
+						<span id="change_this"></span>
+					</li>
+				</ul>
+				
+				Click "View source" to see what makes it work. More documentation <a href="http://github.com/jimmysawczuk/clippy-jquery">available here</a>.
+			</div>
+		</div>
+		
+		<div id="rhs">
+			<div class="padded_container">
+				<textarea id="pastebin" class="empty">Test your paste here.</textarea>
+			</div>
+		</div>
+	</div>
+		
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			/* Clippy location (hosted on Github) */
+			var clippy_swf = "../src/clippy.swf";
+
+			/* Get all of this boring stuff out of the way... */
+			$('#pastebin').click(function(evt)
+			{
+				$('#pastebin').removeClass('empty');
+				$('#pastebin')[0].select();
+				return false;
+			});
+			
+			/* Set up the clippies! */
+			$('.clippy').clippy({ clippy_path: clippy_swf });
+			
+			$('#change_me').keyup(function()
+			{
+				$('#change_this').html('').clippy({'text': $(this).val(), clippy_path: clippy_swf });
+			}).keyup();
+		});
+	</script>
+</body>
+</html>
