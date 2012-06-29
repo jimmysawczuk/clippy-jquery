@@ -4,19 +4,19 @@
 */
 (function($)
 {
+	var _opts = { // default options
+		'width': 14,
+		'height': 14,
+		'color': '#ffffff',
+		'clippy_path': 'clippy.swf',
+		'keep_text': false,
+		'transparent': false,
+		'force_load' : false,
+		'flashvars'  : {}
+	};
+
 	$.fn.clippy = function(opts) 
 	{
-		_opts = { // default options
-			'width': 14,
-			'height': 14,
-			'color': '#ffffff',
-			'clippy_path': 'clippy.swf',
-			'keep_text': false,
-			'transparent': false,
-			'force_load' : false,
-			'flashvars'  : {}
-		};
-		
 		opts = $.extend(_opts, opts);
 		
 		var hasFlash = false;
@@ -40,50 +40,55 @@
 		if (hasFlash || opts.force_load) 
 		{ 
 			// for every element matched...
-			this.each(function(idx, val)
+			$.each($(this), function(idx, val)
 			{
-				if (opts.text && opts.text != '')
+				var text = "";
+				if (typeof opts.text != "undefined")
 				{
 					text = opts.text;
 				}
-				else if ($(val).data('text') && $(val).data('text') != '')
+				else if ($(val).data('text') && $.trim($(val).data('text')) != '')
 				{
 					text = $(val).data('text');
 				}
 				else
 				{
-					text = $(val).text();
+					text = $.trim($(val).text());
 				}
 				
 				// text should be URI-encoded, per https://github.com/mojombo/clippy/pull/9
 				text = encodeURIComponent(text);
 				
 				var id = "";
-				if (typeof $(this).attr('id') === "undefined" || $.trim($(this).attr('id') === ""))
+				if (typeof $(val).attr('id') === "undefined" || $.trim($(val).attr('id')) === "")
 				{
-					var id_suffix = Math.round(Math.random() * 1024).toString(16);
+					var id_suffix = Math.round(Math.random() * 10240).toString(16);
 					id = 'clippy-' + id_suffix;
 					
-					$(this).attr('id', id);
+					$(val).attr('id', id);
 				}
 				else
 				{
-					id = $(this).attr('id');
+					id = $(val).attr('id');
 				}
 				
-				if (opts.keep_text)
+				if (!opts.keep_text)
 				{
-					$(this).html('');
+					$(val).html('');
 				}
-				swfobject.embedSWF(opts.clippy_path, id, opts.width, opts.height, '10', false, $.extend(opts.flashvars, {text: text}), {scale: "noscale"});
+
+				var flashvars = $.extend({}, opts.flashvars, {text: text});
+
+				swfobject.embedSWF(opts.clippy_path, id, opts.width, opts.height, 
+					'10', false, flashvars, {scale: "noscale"});
 			});
 		}
 		else
 		{
 			// hide all the clippies so unwanted text is not displayed when Flash is not supported
-			this.each(function(idx, val)
+			$.each(this, function(idx, val)
 			{
-				$(this).css({'display': 'none'});
+				$(val).css({'display': 'none'});
 			});
 		}
 	};
