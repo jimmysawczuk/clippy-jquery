@@ -7,10 +7,8 @@
 	var _opts = { // default options
 		'width': 14,
 		'height': 14,
-		'color': '#ffffff',
 		'clippy_path': 'clippy.swf',
 		'keep_text': false,
-		'transparent': false,
 		'force_load' : false,
 		'flashvars'  : {}
 	};
