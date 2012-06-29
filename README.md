@@ -4,7 +4,7 @@
 
 ### Requirements ###
 
- * jQuery (tested on [1.6.2][2])
+ * jQuery (tested on [1.7.2][2])
  * Flash (just the web browser plugin, no Flash *development* required).
 
 ### Getting started ###
@@ -71,7 +71,7 @@ Thanks to the following open source projects, without which this project would b
   [2]: http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js
   [3]: https://github.com/mojombo
   [4]: https://github.com/mojombo/clippy/blob/master/LICENSE
-  [5]: http://files.jimmysawczuk.com/clippy-jquery/demo/
+  [5]: http://jimmysawczuk.github.com/clippy-jquery/
   [6]: http://jquery.com
   [7]: http://jquery.org/license
   [8]: http://github.com/swfobject/swfobject
