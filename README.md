@@ -88,7 +88,7 @@ Thanks to the following open source projects, without which this project would b
 
 
   [1]: https://github.com/mojombo/clippy
-  [2]: http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js
+  [2]: http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js
   [3]: https://github.com/mojombo
   [4]: https://github.com/mojombo/clippy/blob/master/LICENSE
   [5]: http://jimmysawczuk.github.com/clippy-jquery/
