@@ -49,6 +49,18 @@ Apart from `text`, here are some other options you can pass to `.clippy()`:
 * `force_load` (default: `false`): If true, we'll try to load the SWF even if we can't detect flash in the user's browser
 * `flashvars` (default: `{}`): extra Flash variables to pass to the SWF
 
+#### Custom SWFObject attributes ####
+It is also possible to pass some custom attributes to the SWFObject.
+
+Here is an example to specify a class :
+
+        $(document).ready(function()
+        {
+            $('.clippy').clippy(swfobject_attributes: { styleclass: 'clippy' });
+        });
+        
+[SWFObject documentation][9] explains how to use these attributes.
+
 ### Caveats ###
 
 * As with most jQuery plugins, if the element is dynamically created you need to make sure jQuery knows about it before you call `.clippy()`, i.e. invoke `.clippy()` after you append/prepend/insert the newly-created element into the DOM.
@@ -95,3 +107,4 @@ Thanks to the following open source projects, without which this project would b
   [6]: http://jquery.com
   [7]: http://jquery.org/license
   [8]: http://github.com/swfobject/swfobject
+  [9]: http://code.google.com/p/swfobject/wiki/documentation
