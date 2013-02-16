@@ -849,12 +849,13 @@ var swfobject = function() {
 		'clippy_path': 'clippy.swf',
 		'keep_text': false,
 		'force_load' : false,
-		'flashvars'  : {}
+		'flashvars'  : {},
+		'swfobject_attributes' : {}
 	};
 
 	$.fn.clippy = function(opts) 
 	{
-		opts = $.extend(_opts, opts);
+		opts = $.extend(true, _opts, opts);
 		
 		var hasFlash = false;
 		try
@@ -917,7 +918,7 @@ var swfobject = function() {
 				var flashvars = $.extend({}, opts.flashvars, {text: text});
 
 				swfobject.embedSWF(opts.clippy_path, id, opts.width, opts.height, 
-					'10', false, flashvars, {scale: "noscale"});
+					'10', false, flashvars, {scale: "noscale"}, opts.swfobject_attributes);
 			});
 		}
 		else
