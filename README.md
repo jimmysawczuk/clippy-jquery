@@ -48,18 +48,14 @@ Apart from `text`, here are some other options you can pass to `.clippy()`:
 * `keep_text` (default: `false`): Whether or not to keep inline text inside clippy'ed elements
 * `force_load` (default: `false`): If true, we'll try to load the SWF even if we can't detect flash in the user's browser
 * `flashvars` (default: `{}`): extra Flash variables to pass to the SWF
+* `swfobject_attributes` (default: `{}`): custom SWFObject attributes, per [SWFObject documentation][9]. Here's an example:
 
-#### Custom SWFObject attributes ####
-It is also possible to pass some custom attributes to the SWFObject.
-
-Here is an example to specify a class :
-
-        $(document).ready(function()
-        {
-            $('.clippy').clippy(swfobject_attributes: { styleclass: 'clippy' });
-        });
-        
-[SWFObject documentation][9] explains how to use these attributes.
+    ```javascript
+    $(document).ready(function()
+    {
+        $('.clippy').clippy({swfobject_attributes: { styleclass: 'clippy' }});
+    });
+    ```
 
 ### Caveats ###
 
