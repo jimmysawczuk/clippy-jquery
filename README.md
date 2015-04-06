@@ -74,7 +74,7 @@ Thanks to the following open source projects, without which this project would b
 [clippy][1], [jQuery][6] and **clippy-jquery** are released under MIT licenses. [clippy][1]'s license information is [here][4], jQuery's is [here][7], and **clippy-jquery**'s is below:
 
 	The MIT License (MIT)
-	Copyright (C) 2011-2052 by Jimmy Sawczuk
+	Copyright (C) 2011-2015 by Jimmy Sawczuk
 
 	Permission is hereby granted, free of charge, to any person obtaining a copy
 	of this software and associated documentation files (the "Software"), to deal
