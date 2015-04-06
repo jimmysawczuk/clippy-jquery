@@ -1,6 +1,6 @@
 /*!
 	clippy-jquery: <http://github.com/jimmysawczuk/clippy-jquery>
-	(c) 2011-2012; MIT License, see README.md for full license information and acknowledgements
+	(c) 2011-2015; MIT License, see README.md for full license information and acknowledgements
 */
 (function($)
 {
@@ -14,10 +14,10 @@
 		'swfobject_attributes' : {}
 	};
 
-	$.fn.clippy = function(opts) 
+	$.fn.clippy = function(opts)
 	{
 		opts = $.extend(true, _opts, opts);
-		
+
 		var hasFlash = false;
 		try
 		{
@@ -34,10 +34,10 @@
 				hasFlash = true;
 			}
 		}
-		
+
 		// if browser has Flash support or manual override set...
-		if (hasFlash || opts.force_load) 
-		{ 
+		if (hasFlash || opts.force_load)
+		{
 			// for every element matched...
 			$.each($(this), function(idx, val)
 			{
@@ -54,23 +54,23 @@
 				{
 					text = $.trim($(val).text());
 				}
-				
+
 				// text should be URI-encoded, per https://github.com/mojombo/clippy/pull/9
 				text = encodeURIComponent(text);
-				
+
 				var id = "";
 				if (typeof $(val).attr('id') === "undefined" || $.trim($(val).attr('id')) === "")
 				{
 					var id_suffix = Math.round(Math.random() * 10240).toString(16);
 					id = 'clippy-' + id_suffix;
-					
+
 					$(val).attr('id', id);
 				}
 				else
 				{
 					id = $(val).attr('id');
 				}
-				
+
 				if (!opts.keep_text)
 				{
 					$(val).html('');
@@ -78,7 +78,7 @@
 
 				var flashvars = $.extend({}, opts.flashvars, {text: text});
 
-				swfobject.embedSWF(opts.clippy_path, id, opts.width, opts.height, 
+				swfobject.embedSWF(opts.clippy_path, id, opts.width, opts.height,
 					'10', false, flashvars, {scale: "noscale"}, opts.swfobject_attributes);
 			});
 		}
